@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ckb" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>خەمۆ | My Special Link</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome - Real Social Icons -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Animated Background -->
+    <div class="background">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+        <div class="grid"></div>
+        <div class="stars"></div>
+    </div>
+
+    <main class="container">
+
+        <!-- Profile -->
+        <section class="profile">
+
+            <div class="profile-ring">
+                <div class="profile-image">
+                    <img src="friend.jpg" alt="خەمۆ">
+                </div>
+            </div>
+
+            <div class="verified">
+                <i class="fa-solid fa-check"></i>
+            </div>
+
+            <h1>xamo</h1>
+
+            <p class="bio">
+                Welcome to my little space ✨
+            </p>
+
+            <div class="gold-line">
+                <span></span>
+                <i class="fa-solid fa-star"></i>
+                <span></span>
+            </div>
+
+        </section>
+
+
+        <!-- Music Player -->
+        <section class="music-card">
+
+            <div class="music-info">
+
+                <div class="music-disc">
+                    <i class="fa-solid fa-music"></i>
+                </div>
+
+                <div>
+                    <strong>My Favorite Song</strong>
+                    <small>Playing for you...</small>
+                </div>
+
+            </div>
+
+            <button class="play-button" id="playButton">
+                <i class="fa-solid fa-play"></i>
+            </button>
+
+            <div class="progress-container">
+                <div class="progress" id="progress"></div>
+            </div>
+
+            <div class="music-time">
+                <span id="currentTime">0:00</span>
+                <span id="duration">0:00</span>
+            </div>
+
+            <audio id="audio" src="music.mp3"></audio>
+
+        </section>
+
+
+        <!-- Social Links -->
+        <section class="social-links">
+
+            <!-- Instagram -->
+            <a class="social-card instagram"
+               href="https://instagram.com/xamo_6"
+               target="_blank">
+
+                <div class="social-icon">
+                    <i class="fa-brands fa-instagram"></i>
+                </div>
+
+                <div class="social-text">
+                    <strong>Instagram</strong>
+                    <span>Follow me on Instagram</span>
+                </div>
+
+                <i class="fa-solid fa-arrow-up-right-from-square open-icon"></i>
+
+            </a>
+
+
+            <!-- Snapchat -->
+            <a class="social-card snapchat"
+               href="https://www.snapchat.com/add/a7mad_xamo6"
+               target="_blank">
+
+                <div class="social-icon">
+                    <i class="fa-brands fa-snapchat"></i>
+                </div>
+
+                <div class="social-text">
+                    <strong>Snapchat</strong>
+                    <span>See my Snapchat</span>
+                </div>
+
+                <i class="fa-solid fa-arrow-up-right-from-square open-icon"></i>
+
+            </a>
+
+
+            <!-- Facebook -->
+            <a class="social-card facebook"
+               href="https://facebook.com/ahmad.surchi.184"
+               target="_blank">
+
+                <div class="social-icon">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </div>
+
+                <div class="social-text">
+                    <strong>Facebook</strong>
+                    <span>Find me on Facebook</span>
+                </div>
+
+                <i class="fa-solid fa-arrow-up-right-from-square open-icon"></i>
+
+            </a>
+
+
+            <!-- TikTok -->
+            <a class="social-card tiktok"
+               href="https://www.tiktok.com/@xamo..6"
+               target="_blank">
+
+                <div class="social-icon">
+                    <i class="fa-brands fa-tiktok"></i>
+                </div>
+
+                <div class="social-text">
+                    <strong>TikTok</strong>
+                    <span>Follow me on TikTok</span>
+                </div>
+
+                <i class="fa-solid fa-arrow-up-right-from-square open-icon"></i>
+
+            </a>
+
+
+            <!-- WhatsApp -->
+            <a class="social-card whatsapp"
+               href="https://wa.me/9647808964142"
+               target="_blank">
+
+                <div class="social-icon">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </div>
+
+                <div class="social-text">
+                    <strong>WhatsApp</strong>
+                    <span>Message me on WhatsApp</span>
+                </div>
+
+                <i class="fa-solid fa-arrow-up-right-from-square open-icon"></i>
+
+            </a>
+
+        </section>
+
+
+        <!-- Footer -->
+        <footer>
+
+            <div class="footer-line"></div>
+
+            <p>
+                Made with
+                <i class="fa-solid fa-heart"></i>
+                specially for
+                <strong>خەمۆ</strong>
+            </p>
+
+            <small>
+                © 2026 • All rights reserved
+            </small>
+
+        </footer>
+
+    </main>
+
+
+    <!-- Click Ripple -->
+    <div id="ripple"></div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

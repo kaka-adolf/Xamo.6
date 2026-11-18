@@ -1,0 +1,923 @@
+/* =========================================================
+   XAMO SPECIAL LINK
+   GLASSMORPHISM • DARK BLUE • GOLD • SILVER
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --dark: #050a12;
+    --navy: #081525;
+    --blue: #123456;
+    --silver: #d9e2ec;
+    --gold: #d4af37;
+    --gold-light: #f3d675;
+    --glass: rgba(255, 255, 255, 0.075);
+    --glass-border: rgba(255, 255, 255, 0.15);
+    --text: #f5f7fa;
+    --muted: #aeb8c5;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    font-family: "Cairo", sans-serif;
+    color: var(--text);
+    background:
+        radial-gradient(
+            circle at top,
+            #102945 0%,
+            #07111f 38%,
+            #03070d 100%
+        );
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   BACKGROUND
+========================================================= */
+
+.background {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    z-index: -5;
+}
+
+.orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(90px);
+    opacity: .35;
+    animation: floating 12s ease-in-out infinite alternate;
+}
+
+.orb-1 {
+    width: 350px;
+    height: 350px;
+    background: #174d78;
+    top: -120px;
+    right: -100px;
+}
+
+.orb-2 {
+    width: 300px;
+    height: 300px;
+    background: #9b7b20;
+    bottom: -120px;
+    left: -100px;
+    animation-delay: -4s;
+}
+
+.orb-3 {
+    width: 220px;
+    height: 220px;
+    background: #243b55;
+    top: 45%;
+    left: 45%;
+    opacity: .18;
+    animation-delay: -7s;
+}
+
+@keyframes floating {
+    from {
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+
+    to {
+        transform: translate3d(40px, -30px, 0) scale(1.12);
+    }
+}
+
+
+/* Grid */
+
+.grid {
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            rgba(255,255,255,.025) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.025) 1px,
+            transparent 1px
+        );
+
+    background-size: 45px 45px;
+
+    mask-image: linear-gradient(
+        to bottom,
+        black,
+        transparent
+    );
+}
+
+
+/* Stars */
+
+.stars {
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        radial-gradient(circle, rgba(255,255,255,.5) 1px, transparent 1px),
+        radial-gradient(circle, rgba(212,175,55,.35) 1px, transparent 1px);
+
+    background-size: 120px 120px, 180px 180px;
+    background-position: 20px 30px, 70px 100px;
+
+    opacity: .25;
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.container {
+    width: min(94%, 500px);
+    margin: auto;
+    padding: 55px 0 30px;
+}
+
+
+/* =========================================================
+   PROFILE
+========================================================= */
+
+.profile {
+    text-align: center;
+    position: relative;
+    animation: profileIn 1s ease both;
+}
+
+@keyframes profileIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.profile-ring {
+    width: 155px;
+    height: 155px;
+
+    margin: auto;
+
+    padding: 5px;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--gold-light),
+            var(--gold),
+            #718096,
+            var(--gold-light)
+        );
+
+    box-shadow:
+        0 0 25px rgba(212,175,55,.25),
+        0 0 70px rgba(212,175,55,.08);
+
+    animation: ringRotate 8s linear infinite;
+}
+
+@keyframes ringRotate {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+.profile-image {
+    width: 100%;
+    height: 100%;
+
+    border-radius: 50%;
+
+    overflow: hidden;
+
+    border: 4px solid #07101c;
+
+    background: #101b29;
+}
+
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    animation: imageCounterRotate 8s linear infinite;
+}
+
+@keyframes imageCounterRotate {
+    to {
+        transform: rotate(-360deg);
+    }
+}
+
+
+.verified {
+    position: absolute;
+
+    width: 32px;
+    height: 32px;
+
+    right: calc(50% - 77px);
+    bottom: 73px;
+
+    display: grid;
+    place-items: center;
+
+    background: linear-gradient(
+        135deg,
+        #e9c95c,
+        #a8831f
+    );
+
+    color: #101010;
+
+    border-radius: 50%;
+
+    border: 3px solid #07101c;
+
+    font-size: 13px;
+
+    box-shadow: 0 4px 20px rgba(212,175,55,.35);
+}
+
+
+.profile h1 {
+    margin-top: 20px;
+
+    font-size: 38px;
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #fff,
+            #dce5ee,
+            #d4af37,
+            #fff
+        );
+
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    background-size: 200%;
+
+    animation: shineText 5s linear infinite;
+}
+
+@keyframes shineText {
+    to {
+        background-position: 200%;
+    }
+}
+
+
+.bio {
+    margin-top: 3px;
+
+    color: var(--muted);
+
+    font-size: 14px;
+}
+
+
+.gold-line {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    margin: 15px 0 25px;
+}
+
+.gold-line span {
+    height: 1px;
+    width: 60px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--gold)
+        );
+}
+
+.gold-line span:last-child {
+    background:
+        linear-gradient(
+            90deg,
+            var(--gold),
+            transparent
+        );
+}
+
+.gold-line i {
+    color: var(--gold);
+    font-size: 9px;
+}
+
+
+/* =========================================================
+   MUSIC
+========================================================= */
+
+.music-card {
+    position: relative;
+
+    padding: 18px;
+
+    margin-bottom: 18px;
+
+    border-radius: 24px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.10),
+            rgba(255,255,255,.035)
+        );
+
+    border: 1px solid var(--glass-border);
+
+    backdrop-filter: blur(22px);
+    -webkit-backdrop-filter: blur(22px);
+
+    box-shadow:
+        inset 0 1px rgba(255,255,255,.12),
+        0 15px 45px rgba(0,0,0,.25);
+
+    overflow: hidden;
+}
+
+.music-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 120px;
+    height: 120px;
+
+    background: rgba(212,175,55,.12);
+
+    filter: blur(40px);
+
+    border-radius: 50%;
+
+    right: -40px;
+    top: -50px;
+}
+
+
+.music-info {
+    display: flex;
+    align-items: center;
+
+    gap: 13px;
+}
+
+
+.music-disc {
+    width: 48px;
+    height: 48px;
+
+    flex-shrink: 0;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #e4c55f,
+            #876c20
+        );
+
+    color: #101010;
+
+    box-shadow:
+        0 0 20px rgba(212,175,55,.25);
+
+    animation: disc 3s linear infinite paused;
+}
+
+.music-card.playing .music-disc {
+    animation-play-state: running;
+}
+
+@keyframes disc {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+.music-info strong {
+    display: block;
+
+    font-size: 14px;
+}
+
+.music-info small {
+    display: block;
+
+    margin-top: 2px;
+
+    color: var(--muted);
+
+    font-size: 11px;
+}
+
+
+.play-button {
+    position: absolute;
+
+    top: 18px;
+    left: 18px;
+
+    width: 43px;
+    height: 43px;
+
+    border: 1px solid rgba(255,255,255,.18);
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,.08);
+
+    color: white;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+.play-button:hover {
+    background: var(--gold);
+    color: #111;
+
+    transform: scale(1.08);
+}
+
+
+.progress-container {
+    height: 4px;
+
+    background: rgba(255,255,255,.1);
+
+    border-radius: 10px;
+
+    margin-top: 17px;
+
+    cursor: pointer;
+
+    overflow: hidden;
+}
+
+
+.progress {
+    width: 0%;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            #a58225,
+            #f2d36c
+        );
+
+    border-radius: inherit;
+}
+
+
+.music-time {
+    display: flex;
+    justify-content: space-between;
+
+    margin-top: 7px;
+
+    color: #8996a5;
+
+    font-size: 9px;
+}
+
+
+/* =========================================================
+   SOCIAL CARDS
+========================================================= */
+
+.social-links {
+    display: flex;
+    flex-direction: column;
+
+    gap: 13px;
+}
+
+
+.social-card {
+    position: relative;
+
+    min-height: 73px;
+
+    padding: 12px 15px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+
+    text-decoration: none;
+
+    color: white;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.09),
+            rgba(255,255,255,.035)
+        );
+
+    border: 1px solid rgba(255,255,255,.12);
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    box-shadow:
+        0 12px 30px rgba(0,0,0,.18),
+        inset 0 1px rgba(255,255,255,.08);
+
+    transition:
+        transform .35s ease,
+        border-color .35s ease,
+        background .35s ease,
+        box-shadow .35s ease;
+
+    overflow: hidden;
+
+    animation: cardsIn .6s ease both;
+}
+
+.social-card:nth-child(1) {
+    animation-delay: .1s;
+}
+
+.social-card:nth-child(2) {
+    animation-delay: .18s;
+}
+
+.social-card:nth-child(3) {
+    animation-delay: .26s;
+}
+
+.social-card:nth-child(4) {
+    animation-delay: .34s;
+}
+
+.social-card:nth-child(5) {
+    animation-delay: .42s;
+}
+
+@keyframes cardsIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.social-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 160px;
+    height: 160px;
+
+    border-radius: 50%;
+
+    right: -100px;
+    top: -80px;
+
+    background: var(--social-color);
+
+    opacity: .08;
+
+    filter: blur(30px);
+
+    transition: .4s;
+}
+
+
+.social-card:hover {
+    transform: translateY(-4px) scale(1.015);
+
+    border-color: rgba(212,175,55,.35);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.13),
+            rgba(255,255,255,.05)
+        );
+
+    box-shadow:
+        0 18px 45px rgba(0,0,0,.28),
+        0 0 25px rgba(212,175,55,.07);
+}
+
+.social-card:hover::before {
+    transform: scale(1.5);
+    opacity: .14;
+}
+
+
+.social-icon {
+    width: 48px;
+    height: 48px;
+
+    flex-shrink: 0;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 15px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.12),
+            rgba(255,255,255,.045)
+        );
+
+    border: 1px solid rgba(255,255,255,.12);
+
+    color: var(--social-color);
+
+    font-size: 22px;
+
+    box-shadow:
+        inset 0 1px rgba(255,255,255,.1);
+}
+
+
+.social-text {
+    flex: 1;
+
+    min-width: 0;
+}
+
+.social-text strong {
+    display: block;
+
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.social-text span {
+    display: block;
+
+    margin-top: 1px;
+
+    color: #8f9aaa;
+
+    font-size: 10px;
+}
+
+
+.open-icon {
+    color: #788494;
+
+    font-size: 12px;
+
+    transition: .3s;
+}
+
+.social-card:hover .open-icon {
+    color: var(--gold);
+    transform: translate(-2px, -2px);
+}
+
+
+/* Social Colors */
+
+.instagram {
+    --social-color: #e1306c;
+}
+
+.snapchat {
+    --social-color: #ffe100;
+}
+
+.facebook {
+    --social-color: #1877f2;
+}
+
+.tiktok {
+    --social-color: #ffffff;
+}
+
+.whatsapp {
+    --social-color: #25d366;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    text-align: center;
+
+    margin-top: 30px;
+
+    color: #657181;
+
+    font-size: 11px;
+}
+
+
+.footer-line {
+    width: 90px;
+    height: 1px;
+
+    margin: auto auto 15px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--gold),
+            transparent
+        );
+}
+
+
+footer i {
+    color: #d65c6d;
+
+    margin: 0 3px;
+
+    animation: heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.25);
+    }
+}
+
+footer strong {
+    color: var(--gold-light);
+}
+
+footer small {
+    display: block;
+
+    margin-top: 5px;
+
+    color: #4e5967;
+}
+
+
+/* =========================================================
+   RIPPLE
+========================================================= */
+
+.ripple {
+    position: fixed;
+
+    width: 10px;
+    height: 10px;
+
+    border-radius: 50%;
+
+    background: rgba(212,175,55,.3);
+
+    pointer-events: none;
+
+    transform: translate(-50%, -50%) scale(0);
+
+    animation: ripple .7s ease-out forwards;
+
+    z-index: 9999;
+}
+
+@keyframes ripple {
+    to {
+        transform: translate(-50%, -50%) scale(15);
+        opacity: 0;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .container {
+        width: calc(100% - 28px);
+        padding-top: 35px;
+    }
+
+    .profile-ring {
+        width: 135px;
+        height: 135px;
+    }
+
+    .profile h1 {
+        font-size: 32px;
+    }
+
+    .verified {
+        right: calc(50% - 68px);
+        bottom: 68px;
+    }
+
+    .social-card {
+        min-height: 68px;
+    }
+
+    .social-icon {
+        width: 44px;
+        height: 44px;
+    }
+}
+
+
+/* =========================================================
+   TOUCH DEVICES
+========================================================= */
+
+@media (hover: none) {
+
+    .social-card:hover {
+        transform: none;
+    }
+
+    .play-button:hover {
+        transform: none;
+    }
+}
+
+
+/* =========================================================
+   REDUCE MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+    }
+}
